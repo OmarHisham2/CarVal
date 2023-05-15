@@ -10,5 +10,7 @@
     <color name="background">#171a1b</color>
     <color name="GridBG">#101213</color>
     <color name="CardBG">#4c4c4c</color>
+    <color name="SearchBG">#f6193c</color>
+
 
 </resources>

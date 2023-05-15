@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:weightSum="5"
+    tools:context=".purchaseCar">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Purchase Car"
+                android:textColor="@color/white"
+                android:textSize="40dp" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:background="@drawable/bg"
+        android:columnCount="3"
+        android:padding="15dp"
+        android:rowCount="3">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/bg"
+            android:padding="15dp">
+
+
+            <TextView
+            android:id="@+id/Ownernumber_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/OwnerN_title"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+            app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transmission_dropdown" />
+
+
+            <Spinner
+                android:id="@+id/transmission_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:spinnerMode="dropdown"
+                android:backgroundTint="@color/white"
+                android:overlapAnchor="false"
+                android:drawSelectorOnTop="false"
+                android:dropDownSelector="@color/CardBG"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/KM_Driven" />
+
+            <EditText
+                android:id="@+id/Model_year"
+                android:backgroundTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/Year_title"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/KM_Driven"
+                android:backgroundTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/KM_title"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Model_year" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/Ownernumber_title"
+                app:layout_constraintTop_toBottomOf="@+id/transmission_dropdown">
+
+                <RadioButton
+                    android:id="@+id/Owner_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/white"
+
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/Owner_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textColor="@color/white"
+
+                    android:textSize="18sp" />
+
+
+                <RadioButton
+                    android:id="@+id/Owner_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textColor="@color/white"
+
+                    android:textSize="18sp" />
+
+
+                <RadioButton
+                    android:id="@+id/Owner_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/Mileage"
+                android:backgroundTint="@color/white"
+
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/Mileage_title"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+            <EditText
+                android:id="@+id/Engine_cc"
+                android:backgroundTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/EngineCC_title"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Mileage" />
+            <EditText
+                android:id="@+id/Power"
+                android:layout_width="wrap_content"
+                android:backgroundTint="@color/white"
+
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/Power_title"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Engine_cc" />
+            <EditText
+                android:id="@+id/NSeats"
+                android:backgroundTint="@color/white"
+
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/NSeats_title"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Power" />
+            <EditText
+                android:id="@+id/Max_price"
+                android:layout_width="wrap_content"
+                android:backgroundTint="@color/white"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/MaxPrice_title"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/NSeats" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:cornerRadius="40dp"
+                android:backgroundTint="#BC2E43"
+                android:text="Search | Filter | لسه معرفش هسميه ايه"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Max_price" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </GridLayout>
+
+
+</LinearLayout>
