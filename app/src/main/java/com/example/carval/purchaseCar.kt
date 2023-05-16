@@ -23,19 +23,18 @@ class purchaseCar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_purchase_car)
 
-        val transmissions = resources.getStringArray(R.array.Transmission)
-        val transmission_dropdownmenu = findViewById<Spinner>(R.id.transmission_dropdown)
+        val fuel_Types = resources.getStringArray(R.array.FuelType)
+        val fuelType_dropdown = findViewById<Spinner>(R.id.Fueltype_dropdown)
         val search = findViewById<Button>(R.id.Search_button)
 
-        search.setOnClickListener{
+        search.setOnClickListener {
             calc()
         }
 
 
-
         // Spinner choices and text color //
         val spinnerAdapter = object :
-            ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, transmissions) {
+            ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, fuel_Types) {
 
             override fun isEnabled(position: Int): Boolean {
                 // Disable the first item from Spinner
@@ -61,11 +60,12 @@ class purchaseCar : AppCompatActivity() {
             }
         }
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        transmission_dropdownmenu.adapter = spinnerAdapter
+        fuelType_dropdown.adapter = spinnerAdapter
 
-        transmission_dropdownmenu.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+        fuelType_dropdown.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
+
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -73,18 +73,20 @@ class purchaseCar : AppCompatActivity() {
                 id: Long
             ) {
                 val value = parent!!.getItemAtPosition(position).toString()
-                    (view as TextView).setTextColor(Color.WHITE)
+                (view as TextView).setTextColor(Color.WHITE)
             }
         }
     }
 
-    private fun calc(){
+    private fun calc() {
         val model = SvrModel.newInstance(applicationContext)
 
-        val byteBuffer = ByteBuffer.allocateDirect(10 * 4) // Allocate space for 10 floats (4 bytes each)
+        val byteBuffer =
+            ByteBuffer.allocateDirect(10 * 4) // Allocate space for 10 floats (4 bytes each)
         byteBuffer.order(ByteOrder.nativeOrder()) // Set the byte order based on the system architecture
         //testing
-        val inputData = floatArrayOf(2010.0f, 72000.0f, 3.0f, 0.0f, 1.0f, 37.240f, 998.0f, 58.16f, 5.0f, 60000f)
+        val inputData =
+            floatArrayOf(2010.0f, 72000.0f, 3.0f, 0.0f, 1.0f, 37.240f, 998.0f, 58.16f, 5.0f, 60000f)
         for (value in inputData) {
             byteBuffer.putFloat(value)
         }
@@ -100,7 +102,6 @@ class purchaseCar : AppCompatActivity() {
         // Releases model resources if no longer used.
         model.close()
 
-        
 
     }
 

@@ -16,7 +16,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.1">
+        android:layout_weight="0.8">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -28,9 +28,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Purchase Car"
+                android:text="@string/Purchase_title"
                 android:textColor="@color/white"
-                android:textSize="40dp" />
+                android:textSize="40sp" />
 
 
         </LinearLayout>
@@ -40,7 +40,7 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_weight="4.2"
         android:background="@drawable/bg"
         android:columnCount="3"
         android:padding="15dp"
@@ -57,59 +57,106 @@
 
 
             <TextView
-            android:id="@+id/Ownernumber_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/OwnerN_title"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
-            app:layout_constraintEnd_toStartOf="@+id/radioGroup"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/transmission_dropdown" />
+                android:id="@+id/Ownernumber_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OwnerN_title_optional"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+                app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Transmission" />
+
+            <TextView
+                android:id="@+id/Transmission_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Transmission_title"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Transmission"
+                app:layout_constraintStart_toStartOf="@+id/Ownernumber_title"
+                app:layout_constraintTop_toTopOf="@+id/Transmission" />
+
 
 
             <Spinner
-                android:id="@+id/transmission_dropdown"
+                android:id="@+id/Fueltype_dropdown"
                 android:layout_width="match_parent"
+
                 android:layout_height="50dp"
-                android:spinnerMode="dropdown"
                 android:backgroundTint="@color/white"
-                android:overlapAnchor="false"
                 android:drawSelectorOnTop="false"
                 android:dropDownSelector="@color/CardBG"
+                android:overlapAnchor="false"
+                android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/KM_Driven" />
 
             <EditText
                 android:id="@+id/Model_year"
-                android:backgroundTint="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:maxLength="4"
+                android:autofillHints="Model Year value"
+                android:backgroundTint="@color/white"
                 android:ems="10"
-                android:inputType="number"
                 android:hint="@string/Year_title"
-                android:textColorHint="@color/white"
+                android:inputType="number"
                 android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/KM_Driven"
-                android:backgroundTint="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:autofillHints="KM Driven value"
+                android:backgroundTint="@color/white"
                 android:ems="10"
-                android:inputType="number"
                 android:hint="@string/KM_title"
-                android:textColorHint="@color/white"
+                android:inputType="number"
                 android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Model_year" />
 
+
+            <RadioGroup
+                android:id="@+id/Transmission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Transmission_title"
+                app:layout_constraintTop_toBottomOf="@+id/Fueltype_dropdown">
+
+                <RadioButton
+                    android:id="@+id/Manual_choice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Manual_choice_title"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:padding="5dp"/>
+
+                <RadioButton
+                    android:id="@+id/Auto_choice"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Auto_choice_title"
+                    android:textColor="@color/white"
+                    android:layout_width="100dp"
+
+                    android:textSize="18sp" />
+
+
+            </RadioGroup>
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
@@ -118,13 +165,13 @@
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/Ownernumber_title"
-                app:layout_constraintTop_toBottomOf="@+id/transmission_dropdown">
+                app:layout_constraintTop_toBottomOf="@+id/Transmission">
 
                 <RadioButton
                     android:id="@+id/Owner_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:text="@string/One_title"
                     android:textColor="@color/white"
 
                     android:textSize="18sp" />
@@ -133,7 +180,7 @@
                     android:id="@+id/Owner_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2"
+                    android:text="@string/Two_title"
                     android:textColor="@color/white"
 
                     android:textSize="18sp" />
@@ -143,7 +190,7 @@
                     android:id="@+id/Owner_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="3"
+                    android:text="@string/Three_title"
                     android:textColor="@color/white"
 
                     android:textSize="18sp" />
@@ -151,9 +198,9 @@
 
                 <RadioButton
                     android:id="@+id/Owner_4"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="4"
+                    android:text="@string/Four_title"
+                    android:layout_width="70dp"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
@@ -161,71 +208,79 @@
 
             <EditText
                 android:id="@+id/Mileage"
-                android:backgroundTint="@color/white"
-
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
 
+                android:layout_height="50dp"
+                android:autofillHints="Mileage value"
+                android:backgroundTint="@color/white"
                 android:ems="10"
+                android:hint="@string/Mileage_title_optional"
                 android:inputType="number"
-                android:hint="@string/Mileage_title"
-                android:textColorHint="@color/white"
                 android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/radioGroup" />
 
             <EditText
                 android:id="@+id/Engine_cc"
-                android:backgroundTint="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:autofillHints="EngineCC value"
+                android:backgroundTint="@color/white"
                 android:ems="10"
+                android:hint="@string/EngineCC_title_optional"
                 android:inputType="number"
-                android:hint="@string/EngineCC_title"
-                android:textColorHint="@color/white"
                 android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/Mileage" />
+
             <EditText
                 android:id="@+id/Power"
                 android:layout_width="wrap_content"
-                android:backgroundTint="@color/white"
-
                 android:layout_height="50dp"
+                android:autofillHints="Power value"
+
+                android:backgroundTint="@color/white"
                 android:ems="10"
+                android:hint="@string/Power_title_optional"
                 android:inputType="number"
-                android:hint="@string/Power_title"
-                android:textColorHint="@color/white"
                 android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/Engine_cc" />
+
             <EditText
                 android:id="@+id/NSeats"
-                android:backgroundTint="@color/white"
-
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:maxLength="2"
+                android:autofillHints="Number of Seats value"
+                android:backgroundTint="@color/white"
                 android:ems="10"
+                android:hint="@string/NSeats_title_optional"
                 android:inputType="number"
-                android:hint="@string/NSeats_title"
-                android:textColorHint="@color/white"
                 android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/Power" />
+
             <EditText
                 android:id="@+id/Max_price"
                 android:layout_width="wrap_content"
-                android:backgroundTint="@color/white"
                 android:layout_height="50dp"
+
+                android:autofillHints="Max Price value"
+                android:backgroundTint="@color/white"
                 android:ems="10"
+                android:hint="@string/MaxPrice_title_optional"
                 android:inputType="number"
-                android:hint="@string/MaxPrice_title"
-                android:textColorHint="@color/white"
                 android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/NSeats" />
@@ -234,15 +289,14 @@
                 android:id="@+id/Search_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                app:cornerRadius="40dp"
                 android:backgroundTint="#BC2E43"
-                android:text="Search | Filter | لسه معرفش هسميه ايه"
+                android:padding="10dp"
+                android:text="@string/Search_title"
+                app:cornerRadius="40dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Max_price" />
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

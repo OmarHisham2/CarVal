@@ -3,21 +3,43 @@
     <string name="Purchase_title">Purchase Car</string>
     <string name="Sell_title">Sell Car</string>
     <string name="selected_item">Selected item:</string>
-    <string name="Year_title">Year <font color='#FF0000'>*</font></string>
+    <string name="Year_title">Model Year <font color='#FF0000'>*</font></string>
     <string name="KM_title">Kilometers <font color='#FF0000'>*</font></string>
-    <string name="OwnerN_title">Owner No. : </string>
-    <string name="Mileage_title">Mileage</string>
-    <string name="EngineCC_title">Engine CC</string>
-    <string name="Power_title">Power</string>
-    <string name="NSeats_title">Number Of Seats</string>
-    <string name="MaxPrice_title">Max Price</string>
+    <string name="Transmission_title">Transmission <font color='#FF0000'>*</font> <font color='#FFFFFF'> : </font> </string>
+    <string name="OwnerN_title_optional">Owner No. : </string>
+    <string name="Mileage_title_optional">Mileage</string>
+    <string name="EngineCC_title_optional">Engine CC</string>
+    <string name="Power_title_optional">Power</string>
+    <string name="NSeats_title_optional">Number Of Seats</string>
+    <string name="MaxPrice_title_optional">Max Price</string>
+
+    <string name="OwnerN_title_required">Owner No. <font color='#FF0000'> *</font> <font color='#FFFFFF'> : </font>  </string>
+    <string name="Mileage_title_required">Mileage<font color='#FF0000'> *</font></string>
+    <string name="EngineCC_title_required">Engine CC<font color='#FF0000'> *</font></string>
+    <string name="Power_title_required">Power<font color='#FF0000'> *</font></string>
+    <string name="NSeats_title_required">Number Of Seats<font color='#FF0000'> *</font></string>
+    <string name="MaxPrice_title_required">Max Price<font color='#FF0000'> *</font></string>
+
+    <string name="Search_title">Search | Filter | لسه معرفش هسميه ايه</string>
+
+    <string name="PredictPrice_title">Predict Car Price</string>
+
+    <string name="Manual_choice_title">Manual</string>
+
+    <string name="Auto_choice_title">Auto</string>
+    <string name="One_title">1</string>
+    <string name="Two_title">2</string>
+    <string name="Three_title">3</string>
+    <string name="Four_title">4</string>
 
 
 
-    <string-array name="Transmission">
-        <item>Transmission</item>
-        <item>Manual</item>
-        <item>Auto</item>
+
+    <string-array name="FuelType">
+        <item>Fuel Type</item>
+        <item>Gasoline</item>
+        <item>Petroleum</item>
+        <item>Electricity</item>
     </string-array>
 
 </resources>
