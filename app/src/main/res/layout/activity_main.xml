@@ -22,21 +22,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:orientation="vertical">
 
+            android:orientation="vertical">
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:src="@drawable/main" />
-
+                android:src="@drawable/main"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Car Val"
+                android:text="@string/app_name"
                 android:textColor="@color/white"
-                android:textSize="40dp" />
+                android:textSize="40sp" />
 
 
         </LinearLayout>
@@ -50,12 +49,12 @@
         android:background="@drawable/bg"
         android:columnCount="1"
         android:padding="15dp"
-        android:rowCount="2">
+        android:rowCount="4">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
-
             android:layout_height="0dp"
+            android:id="@+id/purchase_button"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             app:cardBackgroundColor="@color/GridBG"
@@ -76,15 +75,15 @@
                     android:layout_margin="40dp"
                     android:layout_gravity="center"
                     android:layout_weight="2"
-                    android:src="@drawable/buy" />
+                    android:src="@drawable/buy"
+                    tools:ignore="InefficientWeight" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Purchase Car"
+                    android:text="@string/Purchase_title"
                     android:layout_marginTop="-45dp"
-                    android:textSize="25dp"
-
+                    android:textSize="25sp"
                     android:textColor="@color/white"/>
                     </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -95,6 +94,8 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:id="@+id/sell_button"
+
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             app:cardBackgroundColor="@color/GridBG"
@@ -116,14 +117,16 @@
                     android:layout_margin="30dp"
                     android:layout_gravity="center"
                     android:layout_weight="2"
-                    android:src="@drawable/sell" />
+                    android:src="@drawable/sell"
+                    tools:ignore="InefficientWeight" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sell Car"
+                    android:text="@string/Sell_title"
                     android:layout_gravity="center"
                     android:layout_marginTop="-30dp"
-                    android:textSize="25dp"
+                    android:textSize="25sp"
                     android:textColor="@color/white"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

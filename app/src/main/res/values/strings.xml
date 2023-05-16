@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">CarVal</string>
+    <string name="Purchase_title">Purchase Car</string>
+    <string name="Sell_title">Sell Car</string>
+    <string name="selected_item">Selected item:</string>
+    <string name="Year_title">Year <font color='#FF0000'>*</font></string>
+    <string name="KM_title">Kilometers <font color='#FF0000'>*</font></string>
+    <string name="OwnerN_title">Owner No. : </string>
+    <string name="Mileage_title">Mileage</string>
+    <string name="EngineCC_title">Engine CC</string>
+    <string name="Power_title">Power</string>
+    <string name="NSeats_title">Number Of Seats</string>
+    <string name="MaxPrice_title">Max Price</string>
+
+
+
+    <string-array name="Transmission">
+        <item>Transmission</item>
+        <item>Manual</item>
+        <item>Auto</item>
+    </string-array>
+
 </resources>
