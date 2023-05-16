@@ -2,6 +2,7 @@ package com.example.carval
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
@@ -10,6 +11,11 @@ import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carval.ml.SvrModel
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
 
 
 class purchaseCar : AppCompatActivity() {
@@ -73,6 +79,28 @@ class purchaseCar : AppCompatActivity() {
     }
 
     private fun calc(){
+        val model = SvrModel.newInstance(applicationContext)
+
+        val byteBuffer = ByteBuffer.allocateDirect(10 * 4) // Allocate space for 10 floats (4 bytes each)
+        byteBuffer.order(ByteOrder.nativeOrder()) // Set the byte order based on the system architecture
+        //testing
+        val inputData = floatArrayOf(2010.0f, 72000.0f, 3.0f, 0.0f, 1.0f, 37.240f, 998.0f, 58.16f, 5.0f, 60000f)
+        for (value in inputData) {
+            byteBuffer.putFloat(value)
+        }
+        byteBuffer.rewind()
+        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 10), DataType.FLOAT32)
+        inputFeature0.loadBuffer(byteBuffer)
+        val outputs = model.process(inputFeature0)
+        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+        val value = outputFeature0.floatArray
+
+        Log.d("fuck", "calc:${value[0]}")
+
+        // Releases model resources if no longer used.
+        model.close()
+
+        
 
     }
 
