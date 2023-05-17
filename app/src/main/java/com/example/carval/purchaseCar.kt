@@ -93,15 +93,16 @@ class purchaseCar : AppCompatActivity() {
 
         val byteBuffer = ByteBuffer.allocateDirect(9 * 4) // Allocate space for 9 floats (4 bytes each)
         byteBuffer.order(ByteOrder.nativeOrder()) // Set the byte order based on the system architecture
+
+
         //testing
-         val inputData = floatArrayOf(2011.0f, 46000.0f, 3.0f, 0.0f, 18.20f, 1199.0f, 88.70f, 5.0f, 10521.42f)
+        // val inputData = floatArrayOf(2011.0f, 46000.0f, 3.0f, 0.0f, 18.20f, 1199.0f, 88.70f, 5.0f, 10521.42f)
       // val inputData = floatArrayOf(2010.0f, 72000.0f, 0.0f, 0.0f, 1.0f, 37.24f, 998.0f, 58.16f, 5.0f, 6287.342f)
-       // val inputData = floatArrayOf(2013.0f, 40670.0f, 4.0f, 1.0f, 15.20f, 1968.0f, 140.80f, 	5.0f, 35618.0f)
+       val inputData = floatArrayOf(2013.0f, 40670.0f, 4.0f, 1.0f, 15.20f, 1968.0f, 140.80f, 5.0f, 35618.0f)
        //val inputData = floatArrayOf(2014.0f, 27365.0f, 4.0f, 0.0f,  28.40f, 1248.0f, 	74.80f, 5.0f, 9629.36f)
 
         for (i in 0..8) {
            byteBuffer.putFloat(inputData[i])
-          //  byteBuffer.putFloat(calculateZScore(inputData[i],values[0][i],values[1][i]))
         }
         byteBuffer.rewind()
         val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 9), DataType.FLOAT32)
@@ -109,12 +110,10 @@ class purchaseCar : AppCompatActivity() {
         val outputs = model.process(inputFeature0)
         val outputFeature0 = outputs.outputFeature0AsTensorBuffer
         val value = outputFeature0.floatArray[0]
-        //val value =  calculateXScore(outputFeature0.floatArray[0],values[0][9],values[1][9])
-
 
 
        // Log.d("wtf","${values[0][10]}")
-        Log.d("fuck", "index: 1 price is ${value}")
+        Log.d("fuck", "index: 3 price is ${value}")
 
         // Releases model resources if no longer used.
         model.close()
@@ -122,16 +121,5 @@ class purchaseCar : AppCompatActivity() {
         
 
     }
-
-    private fun calculateZScore(sample: Float, max: Float,min: Float): Float {
-        val z = (sample-min)/(max-min)
-        return z
-    }
-
-    private fun calculateXScore(sample: Float, max: Float,min: Float):Float{
-        val x = sample*(max-min) + min
-        return x
-    }
-
 
 }
