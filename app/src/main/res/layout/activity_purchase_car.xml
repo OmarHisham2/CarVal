@@ -1,245 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    android:weightSum="5"
+    android:paddingTop="20dp"
     tools:context=".purchaseCar">
 
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.8">
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/Purchase_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/purch_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/Purchase_title"
-                android:textColor="@color/white"
-                android:textSize="40sp" />
-
-
-        </LinearLayout>
-    </RelativeLayout>
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:text="@string/Purchase_title"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <GridLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+
+        android:id="@+id/bottomConstraint_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4.2"
+        android:layout_height="633dp"
         android:background="@drawable/bg"
-        android:columnCount="1"
-        android:padding="15dp"
-        android:rowCount="1">
+        android:paddingTop="10dp"
+        tools:context=".MainActivity">
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <EditText
+            android:id="@+id/Model_year"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:autofillHints="Model Year value"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/Year_title"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            android:layout_row="0"
-            android:layout_column="0"
-            android:background="@drawable/bg"
-            android:padding="15dp">
+        <TextView
+            android:id="@+id/Transmission_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/Transmission_title"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Fueltype_dropdown" />
+
+        <Spinner
+            android:id="@+id/Fueltype_dropdown"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/white"
+            android:drawSelectorOnTop="false"
+            android:dropDownSelector="@color/CardBG"
+            android:overlapAnchor="false"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="@+id/KM_Driven"
+            app:layout_constraintHorizontal_bias="0.477"
+            app:layout_constraintStart_toStartOf="@+id/KM_Driven"
+            app:layout_constraintTop_toBottomOf="@+id/KM_Driven" />
 
 
-            <TextView
-                android:id="@+id/Transmission_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Transmission_title"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/Transmission"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/Transmission" />
+        <EditText
+            android:id="@+id/Mileage"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="Mileage value"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/Mileage_title_optional"
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/Transmission"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/Transmission_title"
+            app:layout_constraintTop_toBottomOf="@+id/Transmission_title" />
 
+        <EditText
+            android:id="@+id/Engine_cc"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:autofillHints="EngineCC value"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/EngineCC_title_optional"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/Mileage"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Mileage"
+            app:layout_constraintTop_toBottomOf="@+id/Mileage" />
 
-            <Spinner
-                android:id="@+id/Fueltype_dropdown"
+        <EditText
+            android:id="@+id/Power"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:autofillHints="Power value"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/Power_title_optional"
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/Engine_cc"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Engine_cc"
+            app:layout_constraintTop_toBottomOf="@+id/Engine_cc" />
+
+        <EditText
+            android:id="@+id/NSeats"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:autofillHints="Number of Seats value"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/NSeats_title_optional"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/Power"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/Power"
+            app:layout_constraintTop_toBottomOf="@+id/Power" />
+
+        <EditText
+            android:id="@+id/New_price"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:autofillHints="Max Price value"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/NewPrice_title_required"
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/NSeats" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#BC2E43"
+            android:padding="10dp"
+            android:text="@string/Search_title"
+            app:cornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.435"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/New_price"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <EditText
+            android:id="@+id/KM_Driven"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:autofillHints="KM Driven value"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/KM_title"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/Model_year"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Model_year"
+            app:layout_constraintTop_toBottomOf="@+id/Model_year" />
+
+        <RadioGroup
+            android:id="@+id/Transmission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            app:layout_constraintBottom_toBottomOf="@+id/Transmission_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Transmission_title"
+            app:layout_constraintTop_toTopOf="@+id/Transmission_title">
+
+            <RadioButton
+                android:id="@+id/Manual_choice"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/white"
-                android:drawSelectorOnTop="false"
-                android:dropDownSelector="@color/CardBG"
-                android:overlapAnchor="false"
-                android:spinnerMode="dropdown"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/KM_Driven" />
-
-            <EditText
-                android:id="@+id/Model_year"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:autofillHints="Model Year value"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/Year_title"
-                android:inputType="numberDecimal"
-                android:maxLength="4"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/KM_Driven"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:autofillHints="KM Driven value"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/KM_title"
-                android:inputType="number"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Model_year" />
-
-
-            <RadioGroup
-                android:id="@+id/Transmission"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/Transmission_title"
-                app:layout_constraintTop_toBottomOf="@+id/Fueltype_dropdown">
-
-                <RadioButton
-                    android:id="@+id/Manual_choice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="@string/Manual_choice_title"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-
-                <RadioButton
-                    android:id="@+id/Auto_choice"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Auto_choice_title"
-                    android:textColor="@color/white"
-
-                    android:textSize="18sp" />
-
-
-            </RadioGroup>
-
-
-            <EditText
-                android:id="@+id/Mileage"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:autofillHints="Mileage value"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/Mileage_title_optional"
-                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text="@string/Manual_choice_title"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/Transmission" />
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="184dp"
+                tools:layout_editor_absoluteY="223dp" />
 
-            <EditText
-                android:id="@+id/Engine_cc"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:autofillHints="EngineCC value"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/EngineCC_title_optional"
-                android:inputType="number"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/Mileage" />
-
-            <EditText
-                android:id="@+id/Power"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:autofillHints="Power value"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/Power_title_optional"
-                android:inputType="numberDecimal"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/Engine_cc" />
-
-            <EditText
-                android:id="@+id/NSeats"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:autofillHints="Number of Seats value"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/NSeats_title_optional"
-                android:inputType="number"
-                android:maxLength="1"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/Power" />
-
-            <EditText
-                android:id="@+id/New_price"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:autofillHints="Max Price value"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/NewPrice_title_required"
-                android:inputType="numberDecimal"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/NSeats" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/Search_button"
-                android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/Auto_choice"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#BC2E43"
-                android:padding="10dp"
-                android:text="@string/Search_title"
-                app:cornerRadius="40dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/New_price" />
+                android:text="@string/Auto_choice_title"
+                android:textColor="@color/white"
+
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="285dp"
+                tools:layout_editor_absoluteY="223dp" />
+
+        </RadioGroup>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </GridLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

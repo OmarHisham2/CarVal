@@ -42,7 +42,7 @@ class purchaseCar : AppCompatActivity() {
         val engine = findViewById<EditText>(R.id.Engine_cc)
         val seats = findViewById<EditText>(R.id.NSeats)
         val newPrice = findViewById<EditText>(R.id.New_price)
-        val title = findViewById<TextView>(R.id.purch_title)
+        val title = findViewById<TextView>(R.id.Purchase_title)
         //
 
         // Variables

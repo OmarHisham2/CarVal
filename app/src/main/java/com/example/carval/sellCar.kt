@@ -1,12 +1,13 @@
 package com.example.carval
 
-import android.R.attr.value
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -26,7 +27,7 @@ import java.nio.ByteOrder
 class sellCar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_purchase_car)
+        setContentView(R.layout.activity_sell_car)
 
         val fuel_Types = resources.getStringArray(R.array.FuelType)
 
@@ -42,7 +43,7 @@ class sellCar : AppCompatActivity() {
         val engine = findViewById<EditText>(R.id.Engine_cc)
         val seats = findViewById<EditText>(R.id.NSeats)
         val newPrice = findViewById<EditText>(R.id.New_price)
-        val title = findViewById<TextView>(R.id.purch_title)
+        val title = findViewById<TextView>(R.id.Sell_title)
         //
 
         // Variables
@@ -117,11 +118,16 @@ class sellCar : AppCompatActivity() {
                 val string: String = selectedRadioButton.text.toString()
 
             } else {
-                automaticButton.error = "Please select a transmission type"
+                if(automaticButton.error == null) {
+                    automaticButton.error = "Please select a transmission type"
+                    val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+                    transmissionRadioGroup.startAnimation(shake)
+                }
             }
 
             if (selectedRadioButtonId == 213136180) // Manual
             {
+                automaticButton.requestFocus()
                 automaticButton.error = null
                 selectedRadioButtonId = 0;
                 selectedTransmission = selectedRadioButtonId.toFloat()
@@ -172,6 +178,8 @@ class sellCar : AppCompatActivity() {
             {
                 modelYear.requestFocus()
                 modelYear.error = "Please enter a valid year!"
+                val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+                modelYear.startAnimation(shake)
             } else
 
             {
