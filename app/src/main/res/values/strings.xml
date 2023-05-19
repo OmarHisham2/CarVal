@@ -11,14 +11,14 @@
     <string name="EngineCC_title_optional">Engine CC</string>
     <string name="Power_title_optional">Power</string>
     <string name="NSeats_title_optional">Number Of Seats</string>
-    <string name="MaxPrice_title_optional">Max Price</string>
+    <string name="NewPrice_title_optional">New Price</string>
 
     <string name="OwnerN_title_required">Owner No. <font color='#FF0000'> *</font> <font color='#FFFFFF'> : </font>  </string>
     <string name="Mileage_title_required">Mileage<font color='#FF0000'> *</font></string>
     <string name="EngineCC_title_required">Engine CC<font color='#FF0000'> *</font></string>
     <string name="Power_title_required">Power<font color='#FF0000'> *</font></string>
     <string name="NSeats_title_required">Number Of Seats<font color='#FF0000'> *</font></string>
-    <string name="MaxPrice_title_required">Max Price<font color='#FF0000'> *</font></string>
+    <string name="NewPrice_title_required">New Price<font color='#FF0000'> *</font></string>
 
     <string name="Search_title">Search | Filter | لسه معرفش هسميه ايه</string>
 
@@ -37,9 +37,11 @@
 
     <string-array name="FuelType">
         <item>Fuel Type</item>
-        <item>Gasoline</item>
-        <item>Petroleum</item>
-        <item>Electricity</item>
+        <item>Compressed Natural Gas ( CNG )</item>
+        <item>Liquefied Petroleum Gas ( LPG )</item>
+        <item>Petrol ( Gasoline )</item>
+        <item>Diesel</item>
+
     </string-array>
 
 </resources>
