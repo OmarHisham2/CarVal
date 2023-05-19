@@ -2,6 +2,7 @@ package com.example.carval
 
 import android.graphics.Color
 import android.os.Bundle
+import android.speech.tts.TextToSpeech.Engine
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,7 @@ import java.io.InputStreamReader
 class purchaseCar : AppCompatActivity() {
 
     var rows = ArrayList<Row>()
+    var outRows = ArrayList<Row>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_purchase_car)
@@ -111,7 +113,9 @@ class purchaseCar : AppCompatActivity() {
         
         search.setOnClickListener {
             readCSV()
-            Log.d("fuck", "awel row : ${rows[1000]} ")
+            filter()
+
+            Log.d("fuck", "awel row : ${outRows[1]} ")
             /*
             // For manual and auto choices
            var selectedRadioButtonId: Int = transmissionRadioGroup.checkedRadioButtonId
@@ -286,5 +290,30 @@ class purchaseCar : AppCompatActivity() {
 
     }
 
+    private fun filter(minYear: Int = -1, maxYear :Int = Int.MAX_VALUE, minKilometers:Int = -1, maxKilometers:Int = Int.MAX_VALUE,
+                       fuelType:Int = -1, trans:Int = -1, ownerType:Int =-1,
+                       minMileage:Float = -1f, maxMileage :Float = Float.MAX_VALUE,
+                       minEngine:Int =-1, maxEngine: Int = Int.MAX_VALUE,
+                       minPower:Int =-1, maxPower:Int = Int.MAX_VALUE,
+                       seats:Int=-1,
+                       minNewPrice :Float = -1f, maxNewPrice:Float = Float.MAX_VALUE,
+                       minPrice : Float = -1f,maxPrice :Float = Float.MAX_VALUE
 
+    ){
+        var counter:Int = 0
+        for(row in rows){
+            if(row.year in minYear..maxYear && row.kilometers in minKilometers .. maxKilometers
+                && row.mileage in minMileage..maxMileage && row.engine in minEngine..maxEngine
+                && (row.power >= minPower && row.power <= maxPower) && (row.price in minPrice..maxPrice)
+                && (row.newPrice in minNewPrice..maxNewPrice) && counter < 10
+            ){
+                if((row.fuelType==fuelType||fuelType==-1)&& (row.trans==trans||trans==-1)&&(row.ownerType == ownerType || ownerType==-1)
+                    &&(seats==-1 || row.seats==seats)
+                ){
+                    outRows.add(row)
+                    counter++
+                }
+            }
+        }
+    }
 }
