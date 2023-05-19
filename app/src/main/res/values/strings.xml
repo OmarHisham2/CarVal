@@ -32,7 +32,9 @@
     <string name="Three_title">3</string>
     <string name="Four_title">4</string>
 
-
+    <string name="Success_title">Success!</string>
+    <string name="Success_subtitle">Your car price has been calculated.</string>
+    <string name="Price_subtitle" formatted="true">$%.0f</string>
 
 
     <string-array name="FuelType">
@@ -43,5 +45,6 @@
         <item>Diesel</item>
 
     </string-array>
+    <string name="title_activity_predicted_price_screen">predicted_price_screen</string>
 
 </resources>

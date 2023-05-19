@@ -43,9 +43,9 @@
         android:layout_height="0dp"
         android:layout_weight="4.2"
         android:background="@drawable/bg"
-        android:columnCount="3"
+        android:columnCount="1"
         android:padding="15dp"
-        android:rowCount="3">
+        android:rowCount="1">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout

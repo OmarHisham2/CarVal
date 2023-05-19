@@ -1,7 +1,8 @@
 package com.example.carval
 
+import android.R.attr.value
+import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,11 +15,13 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.carval.ml.SvrModel
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
+
 
 class sellCar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +62,7 @@ class sellCar : AppCompatActivity() {
         var inputData = FloatArray(9)
 
         var inputDataFilled = false;
+
 
 
         // Spinner choices and text color //
@@ -238,13 +242,20 @@ class sellCar : AppCompatActivity() {
 
             }
             if(inputDataFilled) {
-                calc(inputData)
+                var predictedPrice =  calc(inputData)
+                val intent = Intent(this@sellCar, predicted_price_screen::class.java)
+                    .putExtra("predictedPrice", predictedPrice)
+                startActivity(intent)
+
+               /* val myIntent = Intent(this@sellCar, predicted_price_screen::class.java)
+                this@sellCar.startActivity(myIntent)*/
+
             }
 
         }
     }
 
-    private fun calc(inputData: FloatArray) {
+    private fun calc(inputData: FloatArray): Float {
         val model = SvrModel.newInstance(applicationContext)
         val byteBuffer =
             ByteBuffer.allocateDirect(9 * 4) // Allocate space for 9 floats (4 bytes each)
@@ -267,10 +278,13 @@ class sellCar : AppCompatActivity() {
         val outputFeature0 = outputs.outputFeature0AsTensorBuffer
         val value = outputFeature0.floatArray[0] //output
 
-        Log.d("testing42", "Expected price is ${value}")
+
+        Log.d("testing42", "Expected price is $value")
 
         // Releases model resources if no longer used.
         model.close()
+        return value;
+
     }
 
 
