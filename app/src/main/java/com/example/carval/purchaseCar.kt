@@ -14,19 +14,19 @@ import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isNotEmpty
-import com.example.carval.ml.SvrModel
-import org.tensorflow.lite.DataType
-import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
-import org.w3c.dom.Text
-import java.nio.ByteBuffer
-import java.nio.ByteOrder
+import java.io.BufferedReader
+import java.io.InputStreamReader
+
 
 
 class purchaseCar : AppCompatActivity() {
+
+    var rows = ArrayList<Row>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_purchase_car)
+
+
 
         val fuel_Types = resources.getStringArray(R.array.FuelType)
 
@@ -108,7 +108,11 @@ class purchaseCar : AppCompatActivity() {
                 (view as TextView).setTextColor(Color.WHITE)
             }
         }
+        
         search.setOnClickListener {
+            readCSV()
+            Log.d("fuck", "awel row : ${rows[1000]} ")
+            /*
             // For manual and auto choices
            var selectedRadioButtonId: Int = transmissionRadioGroup.checkedRadioButtonId
             if (selectedRadioButtonId != -1) {
@@ -241,38 +245,46 @@ class purchaseCar : AppCompatActivity() {
 
             }
             if(inputDataFilled) {
-                calc(inputData)
+              //  calc(inputData)
             }
 
         }
-    }
 
-    private fun calc(inputData: FloatArray) {
-        val model = SvrModel.newInstance(applicationContext)
-        val byteBuffer =
-            ByteBuffer.allocateDirect(9 * 4) // Allocate space for 9 floats (4 bytes each)
-        byteBuffer.order(ByteOrder.nativeOrder()) // Set the byte order based on the system architecture
 
-        //testing
-       //val inputData = floatArrayOf(2011.0f, 46000.0f, 3.0f, 0.0f, 18.20f, 1199.0f, 88.70f, 5.0f, 10521.42f)  Outputs :4988.328
-       // val inputData = floatArrayOf(2010.0f, 72000.0f, 0.0f, 0.0f, 1.0f, 37.24f, 998.0f, 58.16f, 5.0f, 6287.342f) Outputs :57.763676
-
-        // val inputData = floatArrayOf(2013.0f, 40670.0f, 4.0f, 1.0f, 15.20f, 1968.0f, 140.80f, 5.0f, 35618.0f) Outputs : 21641.895
-       // val inputData = floatArrayOf(2014.0f, 27365.0f, 4.0f, 0.0f,  28.40f, 1248.0f, 74.80f, 5.0f, 9629.36f) Outputs :  4379.22
-
-        for (i in 0..8) {
-            byteBuffer.putFloat(inputData[i])
+             */
         }
-        byteBuffer.rewind()
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 9), DataType.FLOAT32)
-        inputFeature0.loadBuffer(byteBuffer)
-        val outputs = model.process(inputFeature0)
-        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
-        val value = outputFeature0.floatArray[0] //output
-
-        Log.d("testing42", "Expected price is ${value}")
-
-        // Releases model resources if no longer used.
-        model.close()
     }
+
+    private fun readCSV(){
+        try {
+            // Open the CSV file from the assets folder
+            val inputStream = resources.openRawResource(R.raw.df)
+            val reader = BufferedReader(InputStreamReader(inputStream))
+
+            // Read each line from the file
+            var line: String? = reader.readLine()
+            while (line != null) {
+                // Split the line by comma to get individual values
+                val values = line.split(",").map { it.trim() }
+                val row = Row(values[1],values[2].toInt(),values[3].toInt(),values[4].toInt(),
+                values[5].toInt(),values[6].toInt(),values[7].toFloat(),values[8].toInt(),values[9].toFloat(),
+                values[10].toInt(),values[11].toFloat(),values[12].toFloat()
+                )
+
+                rows.add(row)
+
+                // Read the next line
+                line = reader.readLine()
+            }
+
+            // Close the reader
+            reader.close()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+
+    }
+
+
 }
