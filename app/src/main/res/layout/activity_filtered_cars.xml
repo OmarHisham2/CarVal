@@ -14,11 +14,9 @@
         android:layout_marginTop="4dp"
         android:fontFamily="@font/lemonmilk_bold"
         android:gravity="center_horizontal"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
         android:text="@string/FilteredTable"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/tl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:gravity="center"
-        android:maxHeight="550dp"
+        android:maxHeight="700dp"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@+id/returntoMenu_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -574,7 +572,6 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:padding="10dp"
-
                 android:text="-"
                 android:textColor="@color/white"
                 android:textSize="12sp"
@@ -617,12 +614,10 @@
         android:padding="10dp"
         android:text="@string/Clickme"
         app:cornerRadius="40dp"
-        app:layout_constraintTop_toBottomOf="@+id/tl"
         app:layout_constraintBottom_toTopOf="@+id/ReFilter_button"
-        tools:layout_editor_absoluteX="106dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="596dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tl" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/ReFilter_button"
@@ -634,7 +629,7 @@
         app:cornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/returntoMenu_button"
         app:layout_constraintVertical_bias="0.397" />

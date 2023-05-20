@@ -26,7 +26,7 @@
             android:text="@string/Sell_title"
             android:textColor="@color/white"
             android:textSize="40sp"
-            android:fontFamily="@font/louis_george_cafe_italic"
+            android:fontFamily="@font/lemonmilk_bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
 
         android:id="@+id/bottomConstraint_layout"
         android:layout_width="match_parent"
-        android:layout_height="641dp"
+        android:layout_height="736dp"
         android:background="@drawable/bg"
         android:paddingTop="10dp"
         tools:context=".MainActivity">
@@ -187,10 +187,10 @@
             app:cornerRadius="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.435"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/New_price"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintVertical_bias="0.051" />
 
         <EditText
             android:id="@+id/KM_Driven"
