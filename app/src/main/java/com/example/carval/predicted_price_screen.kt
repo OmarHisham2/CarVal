@@ -27,12 +27,20 @@ class predicted_price_screen : AppCompatActivity() {
         returntoMenuButton.setOnClickListener()
         {
             startActivity(Intent(this@predicted_price_screen,MainActivity::class.java))
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
         reEvaluateButton.setOnClickListener()
         {
             startActivity(Intent(this@predicted_price_screen,sellCar::class.java))
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
 
+
+    }
+    override fun finish()
+    {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
 
     }
 

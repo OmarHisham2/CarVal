@@ -267,6 +267,7 @@ class sellCar : AppCompatActivity() {
                 val intent = Intent(this@sellCar, predicted_price_screen::class.java)
                     .putExtra("predictedPrice", predictedPrice)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
 
                /* val myIntent = Intent(this@sellCar, predicted_price_screen::class.java)
                 this@sellCar.startActivity(myIntent)*/
@@ -275,7 +276,12 @@ class sellCar : AppCompatActivity() {
 
         }
     }
+    override fun finish()
+    {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
 
+    }
     private fun calc(inputData: FloatArray): Float {
         val model = SvrModel.newInstance(applicationContext)
         val byteBuffer =

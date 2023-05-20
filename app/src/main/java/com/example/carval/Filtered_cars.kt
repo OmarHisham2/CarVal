@@ -149,14 +149,23 @@ class Filtered_cars : AppCompatActivity() {
         returntoMenuButton.setOnClickListener()
         {
             startActivity(Intent(this@Filtered_cars,MainActivity::class.java))
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
         reFilterButton.setOnClickListener()
         {
             startActivity(Intent(this@Filtered_cars,purchaseCar::class.java))
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
 
 
 
+
+
+    }
+    override fun finish()
+    {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
 
     }
 

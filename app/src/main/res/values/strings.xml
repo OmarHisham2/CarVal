@@ -56,7 +56,6 @@
     <string name="Max_price">Max Price</string>
 
 
-
     <string name="Name">Name</string>
     <string name="Year">Year</string>
     <string name="DrivenKM">KM</string>
@@ -80,10 +79,6 @@
     <string name="Clickme">Return to Main Menu</string>
     <string name="Clickme2">Evaluate Another Car</string>
     <string name="Clickme3">Filter more cars</string>
-
-
-
-
 
 
     <string-array name="FuelType">

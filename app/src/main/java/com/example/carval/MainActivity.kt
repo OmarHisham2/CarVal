@@ -29,10 +29,12 @@ class MainActivity : AppCompatActivity() {
     private fun openPurchaseActivity()
     {
         startActivity(Intent(this@MainActivity,purchaseCar::class.java))
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
     }
     private fun openSellActivity()
     {
         startActivity(Intent(this@MainActivity,sellCar::class.java))
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
 
     }
 }

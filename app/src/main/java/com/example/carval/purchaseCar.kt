@@ -344,7 +344,7 @@ class purchaseCar : AppCompatActivity() {
             )
 
 
-            Log.d("fuck","awel row : ${outRows[2]}")
+            Log.d("testing","awel row : ${outRows[2]}")
 
 
 
@@ -354,6 +354,7 @@ class purchaseCar : AppCompatActivity() {
 
             val intent = Intent(this@purchaseCar, Filtered_cars::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
 
         }
     }
@@ -396,6 +397,12 @@ class purchaseCar : AppCompatActivity() {
             e.printStackTrace()
         }
 
+
+    }
+    override fun finish()
+    {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
 
     }
 
