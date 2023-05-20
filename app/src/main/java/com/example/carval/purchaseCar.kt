@@ -1,5 +1,6 @@
 package com.example.carval
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -172,6 +173,8 @@ class purchaseCar : AppCompatActivity() {
                 selectedTransmission = selectedRadioButtonId.toFloat()
                 inputData[5] = selectedTransmission
             }
+            else
+                inputData[5] = selectedTransmission
 
 
 
@@ -210,6 +213,8 @@ class purchaseCar : AppCompatActivity() {
                 selectedOwner = selectedRadioButtonId2.toFloat()
                 inputData[6] = selectedOwner
             }
+            else
+                inputData[6] = selectedOwner
             // Empty Handling
             if (minModelYear.text.toString() != "") {
                 selectedminModelYear = minModelYear.text.toString().toFloat()
@@ -229,6 +234,10 @@ class purchaseCar : AppCompatActivity() {
 
             if (fueltypeDropDown.selectedItemPosition != 0) {
                 selectedFuel = fueltypeDropDown.selectedItemPosition.toFloat()
+                inputData[4] = selectedFuel
+            }
+            else
+            {
                 inputData[4] = selectedFuel
             }
 
@@ -313,12 +322,39 @@ class purchaseCar : AppCompatActivity() {
 
 
 
-            filter(inputData[0].toInt(),inputData[1].toInt(),inputData[2].toInt(),inputData[3].toInt(),inputData[4].toInt(),inputData[5].toInt(),
-                inputData[6].toInt(), inputData[7],inputData[8],inputData[9].toInt(),inputData[10].toInt(),inputData[11].toInt(),
-                inputData[12].toInt(), inputData[13].toInt(), inputData[14],inputData[15],inputData[16],inputData[17],)
+            filter(
+                inputData[0].toInt(),
+                inputData[1].toInt(),
+                inputData[2].toInt(),
+                inputData[3].toInt(),
+                inputData[4].toInt(),
+                inputData[5].toInt(),
+                inputData[6].toInt(),
+                inputData[7],
+                inputData[8],
+                inputData[9].toInt(),
+                inputData[10].toInt(),
+                inputData[11].toInt(),
+                inputData[12].toInt(),
+                inputData[13].toInt(),
+                inputData[14],
+                inputData[15],
+                inputData[16],
+                inputData[17],
+            )
 
 
-            Log.d("fuck","awel row : ${outRows[0]}")
+            Log.d("fuck","awel row : ${outRows[2]}")
+
+
+
+
+            val data = outRows
+            DataHolder.init(data)
+
+            val intent = Intent(this@purchaseCar, Filtered_cars::class.java)
+            startActivity(intent)
+
         }
     }
 

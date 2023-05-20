@@ -12,6 +12,6 @@
     <color name="CardBG">#4c4c4c</color>
     <color name="SearchBG">#f6193c</color>
     <color name="PriceColor">#97e7b6</color>
-
+    <color name="colorGreen">#96c896</color>
 
 </resources>

@@ -14,6 +14,7 @@
     <string name="NSeats_title_optional">Number Of Seats</string>
     <string name="NewPrice_title_optional">New Price</string>
 
+
     <string name="OwnerN_title_required">Owner No. <font color='#FF0000'> *</font> <font color='#FFFFFF'> : </font>  </string>
     <string name="Mileage_title_required">Mileage<font color='#FF0000'> *</font></string>
     <string name="EngineCC_title_required">Engine CC<font color='#FF0000'> *</font></string>
@@ -35,7 +36,7 @@
     <string name="Four_title">4</string>
 
     <string name="Success_title">Success!</string>
-    <string name="Success_subtitle">Your car price has been calculated.</string>
+    <string name="Success_subtitle">Your car price has been evaluated.</string>
     <string name="Price_subtitle" formatted="true">$%.0f</string>
 
 
@@ -53,6 +54,36 @@
     <string name="Max_newprice">Max New Price</string>
     <string name="Min_price">Min Price</string>
     <string name="Max_price">Max Price</string>
+
+
+
+    <string name="Name">Name</string>
+    <string name="Year">Year</string>
+    <string name="DrivenKM">KM</string>
+    <string name="FuelType">FuelType</string>
+
+    <string name="Transmission">Transmission</string>
+
+    <string name="Ownertype">Previous Owner No.</string>
+
+    <string name="Mileage">Mileage</string>
+
+    <string name="Engine">Engine CC</string>
+    <string name="Power">Power</string>
+
+    <string name="Seats">Seats</string>
+    <string name="NewPrice">New Price</string>
+    <string name="UsedPrice">Used Price</string>
+
+    <string name="FilteredTable">Filtered Table</string>
+
+    <string name="Clickme">Return to Main Menu</string>
+    <string name="Clickme2">Evaluate Another Car</string>
+    <string name="Clickme3">Filter more cars</string>
+
+
+
+
 
 
     <string-array name="FuelType">
