@@ -17,6 +17,7 @@ import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carval.ml.Ridge
 import com.example.carval.ml.SvrModel
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
@@ -283,7 +284,8 @@ class sellCar : AppCompatActivity() {
 
     }
     private fun calc(inputData: FloatArray): Float {
-        val model = SvrModel.newInstance(applicationContext)
+       // val model = SvrModel.newInstance(applicationContext)
+        val model = Ridge.newInstance(applicationContext)
         val byteBuffer =
             ByteBuffer.allocateDirect(9 * 4) // Allocate space for 9 floats (4 bytes each)
         byteBuffer.order(ByteOrder.nativeOrder()) // Set the byte order based on the system architecture

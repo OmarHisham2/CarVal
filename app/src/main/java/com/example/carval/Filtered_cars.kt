@@ -1,8 +1,10 @@
 package com.example.carval
 
+import DataHolder
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -13,8 +15,9 @@ class Filtered_cars : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_filtered_cars)
 
-
+        Log.d("fuck","on create filtered_cars called")
         val data = DataHolder.data // Contains outputRows
+
 
         // Car0
         val car0name = findViewById<TextView>(R.id.car0name)
@@ -73,79 +76,69 @@ class Filtered_cars : AppCompatActivity() {
 
 
 
+if (data.size>=10) {
 
-
-        if(data[0].name != null)
-        {
+    if (data[0].name != null) {
         car0name.text = data[0].name
         car0usedprice.text = data[0].price.toInt().toString()
         car0newprice.text = data[0].newPrice.toInt().toString()
         car0year.text = data[0].year.toString()
-        }
-        if(data[1].name != null)
-        {
-            car1name.text = data[1].name
-            car1usedprice.text = data[1].price.toInt().toString()
-            car1newprice.text = data[1].newPrice.toInt().toString()
-            car1year.text = data[1].year.toString()
-        }
-        if(data[2].name != null)
-        {
-            car2name.text = data[2].name
-            car2usedprice.text = data[2].price.toInt().toString()
-            car2newprice.text = data[2].newPrice.toInt().toString()
-            car2year.text = data[2].year.toString()
-        }
-        if(data[3].name != null)
-        {
-            car3name.text = data[3].name
-            car3usedprice.text = data[3].price.toInt().toString()
-            car3newprice.text = data[3].newPrice.toInt().toString()
-            car3year.text = data[3].year.toString()
-        }
-        if(data[4].name != null)
-        {
-            car4name.text = data[4].name
-            car4usedprice.text = data[4].price.toInt().toString()
-            car4newprice.text = data[4].newPrice.toInt().toString()
-            car4year.text = data[4].year.toString()
-        }
-        if(data[5].name != null)
-        {
-            car5name.text = data[5].name
-            car5usedprice.text = data[5].price.toInt().toString()
-            car5newprice.text = data[5].newPrice.toInt().toString()
-            car5year.text = data[5].year.toString()
-        }
-        if(data[6].name != null)
-        {
-            car6name.text = data[6].name
-            car6usedprice.text = data[6].price.toInt().toString()
-            car6newprice.text = data[6].newPrice.toInt().toString()
-            car6year.text = data[6].year.toString()
-        }
-        if(data[7].name != null)
-        {
-            car7name.text = data[7].name
-            car7usedprice.text = data[7].price.toInt().toString()
-            car7newprice.text = data[7].newPrice.toInt().toString()
-            car7year.text = data[7].year.toString()
-        }
-        if(data[8].name != null)
-        {
-            car8name.text = data[8].name
-            car8usedprice.text = data[8].price.toInt().toString()
-            car8newprice.text = data[8].newPrice.toInt().toString()
-            car8year.text = data[8].year.toString()
-        }
-        if(data[9].name != null)
-        {
-            car9name.text = data[9].name
-            car9usedprice.text = data[9].price.toInt().toString()
-            car9newprice.text = data[9].newPrice.toInt().toString()
-            car9year.text = data[9].year.toString()
-        }
-
+    }
+    if (data[1].name != null) {
+        car1name.text = data[1].name
+        car1usedprice.text = data[1].price.toInt().toString()
+        car1newprice.text = data[1].newPrice.toInt().toString()
+        car1year.text = data[1].year.toString()
+    }
+    if (data[2].name != null) {
+        car2name.text = data[2].name
+        car2usedprice.text = data[2].price.toInt().toString()
+        car2newprice.text = data[2].newPrice.toInt().toString()
+        car2year.text = data[2].year.toString()
+    }
+    if (data[3].name != null) {
+        car3name.text = data[3].name
+        car3usedprice.text = data[3].price.toInt().toString()
+        car3newprice.text = data[3].newPrice.toInt().toString()
+        car3year.text = data[3].year.toString()
+    }
+    if (data[4].name != null) {
+        car4name.text = data[4].name
+        car4usedprice.text = data[4].price.toInt().toString()
+        car4newprice.text = data[4].newPrice.toInt().toString()
+        car4year.text = data[4].year.toString()
+    }
+    if (data[5].name != null) {
+        car5name.text = data[5].name
+        car5usedprice.text = data[5].price.toInt().toString()
+        car5newprice.text = data[5].newPrice.toInt().toString()
+        car5year.text = data[5].year.toString()
+    }
+    if (data[6].name != null) {
+        car6name.text = data[6].name
+        car6usedprice.text = data[6].price.toInt().toString()
+        car6newprice.text = data[6].newPrice.toInt().toString()
+        car6year.text = data[6].year.toString()
+    }
+    if (data[7].name != null) {
+        car7name.text = data[7].name
+        car7usedprice.text = data[7].price.toInt().toString()
+        car7newprice.text = data[7].newPrice.toInt().toString()
+        car7year.text = data[7].year.toString()
+    }
+    if (data[8].name != null) {
+        car8name.text = data[8].name
+        car8usedprice.text = data[8].price.toInt().toString()
+        car8newprice.text = data[8].newPrice.toInt().toString()
+        car8year.text = data[8].year.toString()
+    }
+    if (data[9].name != null) {
+        car9name.text = data[9].name
+        car9usedprice.text = data[9].price.toInt().toString()
+        car9newprice.text = data[9].newPrice.toInt().toString()
+        car9year.text = data[9].year.toString()
+    }
+}
         returntoMenuButton.setOnClickListener()
         {
             startActivity(Intent(this@Filtered_cars,MainActivity::class.java))
@@ -168,6 +161,8 @@ class Filtered_cars : AppCompatActivity() {
         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
 
     }
+
+
 
 
 

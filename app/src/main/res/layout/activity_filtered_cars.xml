@@ -14,31 +14,39 @@
         android:layout_marginTop="4dp"
         android:fontFamily="@font/lemonmilk_bold"
         android:gravity="center_horizontal"
+        android:paddingTop="20dp"
         android:paddingBottom="20dp"
         android:text="@string/FilteredTable"
         android:textColor="@color/white"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/tl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tl"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:gravity="center"
+        android:maxHeight="550dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@+id/returntoMenu_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_max="400dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@id/textView"
+
+        >
 
 
         <TableRow>
 
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -61,7 +69,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="77dp"
                 android:layout_height="wrap_content"
                 android:layout_column="3"
                 android:layout_weight="1"
@@ -598,36 +606,6 @@
 
         </TableRow>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/Search_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="140dp"
-            android:backgroundTint="#2D7CD3"
-            android:padding="10dp"
-            android:text="@string/Clickme"
-            app:cornerRadius="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/predictedPrice_text"
-            app:layout_constraintVertical_bias="0.92" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/search_button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#BC2E43"
-            android:padding="10dp"
-            android:text="@string/Clickme2"
-            app:cornerRadius="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Search_button"
-            app:layout_constraintVertical_bias="0.397" />
 
     </TableLayout>
 
@@ -635,15 +613,16 @@
         android:id="@+id/returntoMenu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:backgroundTint="#2D7CD3"
         android:padding="10dp"
         android:text="@string/Clickme"
         app:cornerRadius="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintTop_toBottomOf="@+id/tl"
+        app:layout_constraintBottom_toTopOf="@+id/ReFilter_button"
+        tools:layout_editor_absoluteX="106dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tl" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="596dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/ReFilter_button"
@@ -659,4 +638,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/returntoMenu_button"
         app:layout_constraintVertical_bias="0.397" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

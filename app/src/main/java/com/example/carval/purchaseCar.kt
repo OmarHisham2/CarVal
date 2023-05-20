@@ -27,6 +27,8 @@ class purchaseCar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_purchase_car)
 
+        Log.d("fuck","on create purchase car called")
+        outRows.clear()
 
         val fuel_Types = resources.getStringArray(R.array.FuelType)
 
@@ -147,13 +149,12 @@ class purchaseCar : AppCompatActivity() {
                 (view as TextView).setTextColor(Color.WHITE)
             }
         }
-
         search.setOnClickListener {
             readCSV()
 
 
             // For manual and auto choices
-           var selectedRadioButtonId: Int = transmissionRadioGroup.checkedRadioButtonId
+            var selectedRadioButtonId: Int = transmissionRadioGroup.checkedRadioButtonId
             if (selectedRadioButtonId != -1) {
                 selectedTransmissionType = findViewById(selectedRadioButtonId)
                 val string: String = selectedTransmissionType.text.toString()
@@ -344,7 +345,7 @@ class purchaseCar : AppCompatActivity() {
             )
 
 
-            Log.d("testing","awel row : ${outRows[2]}")
+           // Log.d("testing","awel row : ${outRows[2]}")
 
 
 
@@ -357,6 +358,14 @@ class purchaseCar : AppCompatActivity() {
             overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
 
         }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("fuck", "onResume: purchase car called")
+        outRows.clear()
+
     }
 
     private fun readCSV() {
