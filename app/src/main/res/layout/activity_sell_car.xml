@@ -38,7 +38,7 @@
 
         android:id="@+id/bottomConstraint_layout"
         android:layout_width="match_parent"
-        android:layout_height="633dp"
+        android:layout_height="641dp"
         android:background="@drawable/bg"
         android:paddingTop="10dp"
         tools:context=".MainActivity">
@@ -178,13 +178,11 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Search_button"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:backgroundTint="#BC2E43"
             android:padding="10dp"
-            android:text="@string/Search_title"
+            android:text="@string/Predictbutton_title"
             app:cornerRadius="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

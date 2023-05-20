@@ -118,11 +118,10 @@ class sellCar : AppCompatActivity() {
                 val string: String = selectedRadioButton.text.toString()
 
             } else {
-                if(automaticButton.error == null) {
+
                     automaticButton.error = "Please select a transmission type"
                     val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
                     transmissionRadioGroup.startAnimation(shake)
-                }
             }
 
             if (selectedRadioButtonId == 213136180) // Manual
@@ -155,6 +154,8 @@ class sellCar : AppCompatActivity() {
             } else {
                 val errorTextview = fueltypeDropDown.getSelectedView() as TextView
                 errorTextview.setTextColor(Color.RED)
+                val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+                fueltypeDropDown.startAnimation(shake)
             }
             if (mileage.text.toString() != "") {
                 selectedMileage = mileage.text.toString().toFloat()
@@ -190,6 +191,8 @@ class sellCar : AppCompatActivity() {
             {
                 drivenKM.requestFocus()
                 drivenKM.error = "Please enter a valid value"
+                val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+                drivenKM.startAnimation(shake)
             } else
             {
                 inputData[1] = selectedDrivenKM
@@ -198,6 +201,8 @@ class sellCar : AppCompatActivity() {
             if (selectedMileage <= 0) {
                 mileage.requestFocus()
                 mileage.error = "Please enter a valid value"
+                val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+                mileage.startAnimation(shake)
             } else
             {
                 inputData[4] = selectedMileage
@@ -206,6 +211,8 @@ class sellCar : AppCompatActivity() {
             {
                 engine.requestFocus()
                 engine.error = "Please enter a valid value"
+                val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+                engine.startAnimation(shake)
             }
             else
             {
@@ -215,6 +222,8 @@ class sellCar : AppCompatActivity() {
             if (selectedPower <= 0f) {
                 power.requestFocus()
                 power.error = "Please enter a valid power value"
+                val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+                power.startAnimation(shake)
             }
             else
             {
@@ -224,6 +233,8 @@ class sellCar : AppCompatActivity() {
             if (selectedSeats <= 0f) {
                 seats.requestFocus()
                 seats.error = "Please enter a valid value"
+                val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+                seats.startAnimation(shake)
             } else {
 
                 inputData[7] = selectedSeats
@@ -231,6 +242,8 @@ class sellCar : AppCompatActivity() {
             if (selectedNewPrice <= 0f) {
                 newPrice.requestFocus()
                 newPrice.error = "Please enter a valid value"
+                val shake: Animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+                newPrice.startAnimation(shake)
             } else
             {
                 inputData[8] = selectedNewPrice

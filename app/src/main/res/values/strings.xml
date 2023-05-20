@@ -6,6 +6,7 @@
     <string name="Year_title">Model Year <font color='#FF0000'>*</font></string>
     <string name="KM_title">Kilometers <font color='#FF0000'>*</font></string>
     <string name="Transmission_title">Transmission <font color='#FF0000'>*</font> <font color='#FFFFFF'> : </font> </string>
+    <string name="Transmission_title_optional">Transmission    : </string>
     <string name="OwnerN_title_optional">Owner No. : </string>
     <string name="Mileage_title_optional">Mileage</string>
     <string name="EngineCC_title_optional">Engine CC</string>
@@ -20,7 +21,8 @@
     <string name="NSeats_title_required">Number Of Seats<font color='#FF0000'> *</font></string>
     <string name="NewPrice_title_required">New Price<font color='#FF0000'> *</font></string>
 
-    <string name="Search_title">Search | Filter | لسه معرفش هسميه ايه</string>
+    <string name="Predictbutton_title">Predict price</string>
+    <string name="Filterbutton_title">Filter</string>
 
     <string name="PredictPrice_title">Predict Car Price</string>
 
@@ -35,6 +37,22 @@
     <string name="Success_title">Success!</string>
     <string name="Success_subtitle">Your car price has been calculated.</string>
     <string name="Price_subtitle" formatted="true">$%.0f</string>
+
+
+    <string name="Min_modelYear">Min Model Year</string>
+    <string name="Max_modelYear">Max Model Year</string>
+    <string name="Min_KM">Min Kilometers</string>
+    <string name="Max_KM">Max Kilometers</string>
+    <string name="Min_mileage">Min Mileage</string>
+    <string name="Max_mileage">Max Mileage</string>
+    <string name="Min_engine">Min Engine CC </string>
+    <string name="Max_engine">Max Engine CC</string>
+    <string name="Min_power">Min Power</string>
+    <string name="Max_power">Max Power</string>
+    <string name="Min_newprice">Min New Price</string>
+    <string name="Max_newprice">Max New Price</string>
+    <string name="Min_price">Min Price</string>
+    <string name="Max_price">Max Price</string>
 
 
     <string-array name="FuelType">
